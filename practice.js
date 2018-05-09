@@ -96,6 +96,15 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
+let contains = (array, name, cb) => {
+  for(var i = 0; i<array.length; i++){
+    if (array[i] === name){
+      cb(true);
+    }
+  }
+  cb(false);
+}
+
 //Code Here 
 
 // Do not edit the code below.
@@ -117,6 +126,12 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
+let uniq = (arr, cb) => {
+  let newArray = [];
+    
+  cb(newArray);
+}
+
 //Code Here
 
 // Do not edit the code below.
@@ -134,6 +149,12 @@ uniq(names, function(uniqArr){
   For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 */
 
+let each = (arr, cb) => {
+  for(var i = 0; i<arr.length; i++){
+    cb(arr[i],i);
+  }
+}
+
 //Code Here 
 
 // Do not edit the code below.
@@ -147,10 +168,18 @@ each(names, function(item, indice){
 ////////// PROBLEM 7 //////////
 
 /*
-  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+  Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a 
+  callback, and searches for the user with a matching id.
   When the correct user object is found, invoke the callback with the user object as an argument.
 */
 
+let getUserById = (arr, id, cb) => {
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].id===id){
+      cb(arr[i]);
+    }
+  }
+}
 // Code here
 
 // Do not edit the code below.
